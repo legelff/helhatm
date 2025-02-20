@@ -4,5 +4,42 @@
   <div class="container">
     <h1>{{title}}</h1>
     <p>Welcome to {{title}}</p>
+    <button type="button" class="btn btn-primary">Button</button>
+    <div class="row">
+      <div class="col-12">
+        <div class="card mt-4 shadow">
+          <img class="card-img-top" src="" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Classification statistics</h4>
+              <table class="table table-s">
+                <thead>
+                  <tr>
+                    <th>Rating label</th>
+                    <th>Number of films</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for film in films %}
+                    <tr>
+                      <td>
+                        {{film.rating}}
+                      </td>
+                      <td>
+                        {{film._count.rating}}
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Comment in twig -->
+  {# Comment in twig #}
+
 {% endblock %}
